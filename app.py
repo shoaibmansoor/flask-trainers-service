@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-
+from os import environ
 from models import db
 from trainer_resource import TrainerResource
 
@@ -18,4 +18,4 @@ def create_tables():
 api.add_resource(TrainerResource, '/trainers', '/trainers/<int:trainer_id>')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port=environ.get('PORT', 5000))
