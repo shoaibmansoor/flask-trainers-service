@@ -104,3 +104,14 @@ minikube service flask-app
 minikube ip
 kubectl get service flask-app
 ```
+
+
+### Python Anywhere Deployment Instrcutions
+- Sign up for a free account on PythonAnywhere.
+- Start a new web app, select "Manual configuration", and the Python version you need.
+- In a new Bash console, create a virtual environment with mkvirtualenv --python=/usr/bin/python3.x myenv.
+- Install Flask (and other dependencies) in the virtual environment with pip install flask.
+- Link the virtual environment to your web app in the "Virtualenv" section of the "Web" tab.
+- Upload your Flask application files to the "Source code" directory.
+- Edit the WSGI configuration file under the "Code" section of the "Web" tab to set the correct path and import your app.
+- Hit "Reload" on the "Web" tab to launch your Flask app.
