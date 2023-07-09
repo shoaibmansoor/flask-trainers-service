@@ -15,6 +15,12 @@ db.init_app(app)
 def create_tables():
     db.create_all()
 
+
+@app.route('/', methods=['GET'])
+def index():
+    return 'The app is running!'
+
+
 api.add_resource(TrainerResource, '/trainers', '/trainers/<int:trainer_id>')
 
 if __name__ == '__main__':
